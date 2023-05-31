@@ -1,4 +1,4 @@
-#MODUL FORMASI MUSIK
+#MODUL FORMASI MUSIK/BAND
 formasi = {'simple':{
     'alat musik':'Keyboard',
     'penyanyi': 2,
