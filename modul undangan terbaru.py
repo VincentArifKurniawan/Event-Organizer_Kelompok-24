@@ -1,4 +1,4 @@
-#MODUL FORMASI MUSIK/BAND
+#MODUL PILIHAN UNDANGAN
 undangan = {'hard':{
     'Undangan anda akan dicetak':'Hard Cover',
     'Dengan harga': 8500},
