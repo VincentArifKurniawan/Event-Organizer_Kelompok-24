@@ -3,23 +3,28 @@ formasi = {'simple':{
     'alat musik':'Keyboard',
     'penyanyi': 2,
     'harga': 1000000},
-           'simple trio':{
+
+    'simple trio':{
     'alat musik':'Drum, Bass, Keyboard',
     'penyanyi': 2,
     'harga': 1500000},
-            'band':{
+
+    'band':{
     'alat musik':'Drum, Bass, Keyboard, Gitar',
     'penyanyi': 2,
     'harga': 2500000},
-            'exclusive band':{
+    
+    'exclusive band':{
     'alat musik':'Drum, Bass, Keyboard, Gitar, Biola, Saxophone',
     'penyanyi': 2,
     'harga': 3500000},
-            'light orchestra':{
+    
+    'light orchestra':{
     'alat musik':'Drum, Bass, Keyboard, Gitar, Saxophone, Cello, Viola, Violin 1, Violin 2',
     'penyanyi': 4,
     'harga': 6000000},
-                'big band':{
+    
+    'big band':{
     'alat musik':'Drum, Bass, Keyboard, Gitar, Saxophone, Cello, Viola, Violin 1, Violin 2, Terompet, Trombone, Alto, Saxophone',
     'penyanyi': 4,
     'harga': 10000000}
@@ -40,5 +45,7 @@ def pilihan():
         print(formasi['big band'])
     verifikasi = input('Proceed?')
     if verifikasi == 'Y':
-        print('Oke') #lanjut ke program berikutnya
+     print('Oke') #lanjut ke program berikutnya
     else: pilihan()
+
+
