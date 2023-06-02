@@ -22,18 +22,18 @@ print('Ketik: B untuk Soft Cover')
 print('Ketik: C untuk Digital')
 print('==============')
 
-def pilihan(): 
-  pilih = input('Anda akan mencetak undangan berupa apa? ')
-  if pilih == 'A':
+
+pilih = input('Anda akan mencetak undangan berupa apa? ')
+if pilih == 'A':
     print(hard)
-  if pilih == 'B':
+if pilih == 'B':
     print(soft)
-  if pilih == 'C':
+if pilih == 'C':
     print(digital)
-  verivikasi = input('Yakin?')
-  if verivikasi == 'Y':
+verivikasi = input('Yakin?')
+if verivikasi == 'Y':
     print("Terimakasih")
-  else:pilihan():
-    #print("Inputan harus Y/N")
+else:
+    print("Inputan harus Y/N")
 
 
