@@ -1,4 +1,4 @@
-
+# MODUL OPSI UNDANGAN
 hard = {
   "Undangan anda akan di cetak ": "hard cover",
   "Dengan harga": 8500
@@ -22,18 +22,18 @@ print('Ketik: B untuk Soft Cover')
 print('Ketik: C untuk Digital')
 print('==============')
 
-
-pilih = input('Anda akan mencetak undangan berupa apa? ')
-if pilih == 'A':
+def pilihan(): 
+  pilih = input('Anda akan mencetak undangan berupa apa? ')
+  if pilih == 'A':
     print(hard)
-if pilih == 'B':
+  if pilih == 'B':
     print(soft)
-if pilih == 'C':
+  if pilih == 'C':
     print(digital)
-verivikasi = input('Yakin?')
-if verivikasi == 'Y':
+  verivikasi = input('Yakin?')
+  if verivikasi == 'Y':
     print("Terimakasih")
-else:
-    print("Inputan harus Y/N")
+  else:pilihan():
+    #print("Inputan harus Y/N")
 
 
