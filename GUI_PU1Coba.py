@@ -1,108 +1,115 @@
-import tkinter as tk
-from tkinter import messagebox
+from tkinter import Tk, Label, Entry, Button, StringVar, messagebox
+from PIL import ImageTk, Image
+from tkinter import LabelFrame
 
-from datetime import date
-TanggalBase = date(1800,1,1)
-hari = ["Rabu", "Kamis", "Jumat", "Sabtu", "Minggu", "Senin", "Selasa"]
-data_klien = []
-booking_data = []
+def login():
+    # Fungsi ini akan dipanggil saat tombol Login ditekan
+    username = username_entry.get()
+    password = password_entry.get()
 
-def on_submit():
-    # Mengambil nilai dari input field
-    nama = entry_nama.get()
-    no_telp = entry_no_telp.get()
-    dd = int(entry_tanggal.get())
-    mm = int(entry_bulan.get())
-    yy = int(entry_tahun.get())
-    tempat = entry_tempat.get()
-
-    if not all(x.isalpha() or x.isspace() for x in nama):
-        messagebox.showerror("Error", "Nama harus berupa karakter huruf.")
-        return
-
-    if not no_telp.isnumeric():
-        messagebox.showerror("Error", "Nomor telepon harus berupa angka.")
-        return
-
-    tanggal_acara = date(yy, mm, dd)
-    selisih = tanggal_acara - TanggalBase
-    index_hari = selisih.days % 7
-    hari_acara = hari[index_hari]
-
-    # Memasukkan nilai ke dalam list data_klien dan booking_data
-    data_klien.append(nama)
-    data_klien.append(f'+62{no_telp}')
-    booking_data.append(hari_acara)
-    booking_data.append(str(tanggal_acara))
-    booking_data.append(tempat)
-
-    # Cek ketersediaan tempat dan tanggal
-    if not cek(booking_data):
-        messagebox.showinfo("Informasi", "Selamat, tempat yang Anda pesan tersedia! Silakan melanjutkan pesanan Anda.")
-        # Melanjutkan proses selanjutnya (misalnya, menyimpan ke file)
-        # ...
-
-def cek(booking_data):
-    x = booking_data[-1]
-    baca_datatempat = open('booking.txt','r')
-    data_ada = baca_datatempat.read()
-    if str(x) in data_ada:
-        messagebox.showerror("Error", "Mohon maaf, tempat dan tanggal tersebut sudah dipesan oleh klien lain. Mohon coba mengganti tanggal atau tempat")
-        return False
+    if username == "" or password == "":
+        messagebox.showwarning("Error", "Username and password are required!")
+    elif username in accounts and accounts[username] == password:
+        open_biodata_menu()
     else:
-        datatempat = open('booking.txt', 'a')
-        datatempat.write(f'\n{str(x)}')
-        return True
+        messagebox.showerror("Error", "Invalid username or password!")
+
+def create_account():
+    # Fungsi ini akan dipanggil saat tombol Create Account ditekan
+    username = username_entry.get()
+    password = password_entry.get()
+
+    if username == "" or password == "":
+        messagebox.showwarning("Error", "Username and password are required!")
+    elif username in accounts:
+        messagebox.showerror("Error", "Username already exists!")
+    else:
+        accounts[username] = password
+        messagebox.showinfo("Success", "Account created successfully!")
+
+def open_biodata_menu():
+    # Fungsi ini akan dipanggil saat login berhasil dan membuka menu biodata
+    login_frame.pack_forget()
+    biodata_frame.pack()
+
+def save_biodata():
+    # Fungsi ini akan dipanggil saat tombol Save ditekan pada menu biodata
+    name = name_entry.get()
+    phone = phone_entry.get()
+
+    if name == "" or phone == "":
+        messagebox.showwarning("Error", "Name and phone are required!")
+    else:
+        with open("biodata.txt", "a") as file:
+            file.write(f"Name: {name}\nPhone: {phone}\n\n")
+        messagebox.showinfo("Success", "Biodata saved successfully!")
 
 # Membuat jendela utama
-window = tk.Tk()
-window.title("Event Organizer Program")
-window.geometry("400x400")
+root = Tk()
+root.title("Event Organizer")
+root.geometry("400x250")
 
-# Membuat label
-label_title = tk.Label(window, text="EVENT ORGANIZER PROGRAM", font=("Arial", 14, "bold"))
-label_title.pack(pady=10)
+# Memuat gambar latar belakang
+background_image = Image.open("TemplateTI.png")
+background_image = background_image.resize((400, 250), Image.ANTIALIAS)
+bg_image = ImageTk.PhotoImage(background_image)
 
-label_nama = tk.Label(window, text="Nama:")
-label_nama.pack()
+# Menambahkan label untuk gambar latar belakang
+bg_label = Label(root, image=bg_image)
+bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-# Membuat input field
-entry_nama = tk.Entry(window)
-entry_nama.pack()
+# Menambahkan judul "Event Organizer"
+title_label = Label(root, text="Event Organizer", font=("Arial", 20), bg="white")
+title_label.pack(pady=10)
 
-label_no_telp = tk.Label(window, text="No. Telepon:")
-label_no_telp.pack()
+# Menambahkan frame untuk menu login
+login_frame = LabelFrame(root, text="Login", bg="white")
+login_frame.pack(pady=20)
 
-entry_no_telp = tk.Entry(window)
-entry_no_telp.pack()
+# Menambahkan label dan entry untuk username
+username_label = Label(login_frame, text="Username:", bg="white")
+username_label.pack()
+username_entry = Entry(login_frame)
+username_entry.pack()
 
-label_tanggal = tk.Label(window, text="Tanggal (DD):")
-label_tanggal.pack()
+# Menambahkan label dan entry untuk password
+password_label = Label(login_frame, text="Password:", bg="white")
+password_label.pack()
+password_entry = Entry(login_frame, show="*")
+password_entry.pack()
 
-entry_tanggal = tk.Entry(window)
-entry_tanggal.pack()
+# Menambahkan tombol Login
+login_button = Button(login_frame, text="Login", command=login)
+login_button.pack()
 
-label_bulan = tk.Label(window, text="Bulan (MM):")
-label_bulan.pack()
+# Menambahkan tombol Create Account
+create_account_button = Button(login_frame, text="Create Account", command=create_account)
+create_account_button.pack()
 
-entry_bulan = tk.Entry(window)
-entry_bulan.pack()
+# Menambahkan frame untuk menu biodata
+biodata_frame = LabelFrame(root, text="Biodata", bg="white")
 
-label_tahun = tk.Label(window, text="Tahun (YYYY):")
-label_tahun.pack()
+# Menambahkan label dan entry untuk nama
+name_label = Label(biodata_frame, text="Name:", bg="white")
+name_label.pack()
+name_entry = Entry(biodata_frame)
+name_entry.pack()
 
-entry_tahun = tk.Entry(window)
-entry_tahun.pack()
+# Menambahkan label dan entry untuk telepon
+phone_label = Label(biodata_frame, text="Phone:", bg="white")
+phone_label.pack()
+phone_entry = Entry(biodata_frame)
+phone_entry.pack()
 
-label_tempat = tk.Label(window, text="Tempat:")
-label_tempat.pack()
+# Menambahkan tombol Save
+save_button = Button(biodata_frame, text="Save", command=save_biodata)
+save_button.pack()
 
-entry_tempat = tk.Entry(window)
-entry_tempat.pack()
+# Menyembunyikan frame biodata
+biodata_frame.pack_forget()
 
-# Membuat tombol Submit
-button_submit = tk.Button(window, text="Submit", command=on_submit)
-button_submit.pack(pady=10)
+# Dictionary untuk menyimpan akun
+accounts = {}
 
-# Memulai loop utama
-window.mainloop()
+# Menjalankan aplikasi
+root.mainloop()
