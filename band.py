@@ -1,4 +1,3 @@
-#MODUL FORMASI MUSIK/BAND
 formasi = {'simple':{
     'alat musik':'Keyboard',
     'penyanyi': 2,
@@ -29,23 +28,51 @@ formasi = {'simple':{
     'penyanyi': 4,
     'harga': 10000000}
 }
-def pilihan():
-    x = input('Formasi apa yang mau dipilih? ')
-    if x == 'A':
-        print(formasi['simple'])
-    if x == 'B':
-        print(formasi['simple trio'])
-    if x == 'C':
-        print(formasi['band'])
-    if x == 'D':
-        print(formasi['exclusive band'])
-    if x == 'E':
-        print(formasi['light orchestra'])
-    if x == 'F':
-        print(formasi['big band'])
-    verifikasi = input('Proceed?')
-    if verifikasi == 'Y':
-     print('Oke') #lanjut ke program berikutnya
-    else: pilihan()
 
+formasi_dipilih = []
+
+def pilihan():
+    try:
+        x = input('Formasi apa yang mau dipilih? ')
+        if x.upper() == 'A':
+            print(formasi['simple'])
+            formasi_dipilih.append('simple')
+        if x.upper() != 'A':
+            if x.upper() == 'B':
+                print(formasi['simple trio'])
+                formasi_dipilih.append('simple trio')
+            if x.upper() != 'B':
+                if x.upper() == 'C':
+                    print(formasi['band'])
+                    formasi_dipilih.append('band')
+                if x.upper() != 'C':
+                    if x.upper() == 'D':
+                        print(formasi['exclusive band'])
+                        formasi_dipilih.append('exclusive band')
+                    if x.upper() != 'D':    
+                        if x == 'E':
+                            print(formasi['light orchestra'])
+                            formasi_dipilih.append('light orchestra')
+                        if x.upper() != 'E':
+                            if x == 'F':
+                                print(formasi['big band'])
+                                formasi_dipilih.append('big band')
+                            else:
+                                print('Input tidak valid')
+                                pilihan()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        pilihan()
+
+def verif():
+    verifikasi = input('Apakah Anda yakin? (Y/N) ')
+    if verifikasi.upper() == 'Y':
+        print(f'Formasi yang Anda pilih adalah {formasi_dipilih[-1]}')
+    if verifikasi.upper() != 'Y':
+        if verifikasi.upper() == 'N':
+            pilihan()
+            verif()
+        else: 
+            print('Input tidak valid')
+            verif()
 
