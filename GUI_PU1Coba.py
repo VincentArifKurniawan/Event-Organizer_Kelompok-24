@@ -8,11 +8,11 @@ def login():
     password = password_entry.get()
 
     if username == "" or password == "":
-        messagebox.showwarning("Error", "Username and password are required!")
+        messagebox.showwarning("Error", "Buat Username dan Password Dahulu Sebelum Login!")
     elif username in accounts and accounts[username] == password:
         open_biodata_menu()
     else:
-        messagebox.showerror("Error", "Invalid username or password!")
+        messagebox.showerror("Error", "Username atau Password yang Anda Inputkan Salah atau Belum Tersedia!")
 
 def create_account():
     # Fungsi ini akan dipanggil saat tombol Create Account ditekan
@@ -20,12 +20,12 @@ def create_account():
     password = password_entry.get()
 
     if username == "" or password == "":
-        messagebox.showwarning("Error", "Username and password are required!")
+        messagebox.showwarning("Error", "Username Beserta Password Belum di Inputkan!")
     elif username in accounts:
-        messagebox.showerror("Error", "Username already exists!")
+        messagebox.showerror("Error", "Username dan Password yang Anda Inputkan Sudah Ada!")
     else:
         accounts[username] = password
-        messagebox.showinfo("Success", "Account created successfully!")
+        messagebox.showinfo("Success", "Akun Untuk Login Berhasil Dibuat!")
 
 def open_biodata_menu():
     # Fungsi ini akan dipanggil saat login berhasil dan membuka menu biodata
@@ -34,24 +34,24 @@ def open_biodata_menu():
 
 def save_biodata():
     # Fungsi ini akan dipanggil saat tombol Save ditekan pada menu biodata
-    name = name_entry.get()
+    Nama_Pemesan = name_entry.get()
     phone = phone_entry.get()
 
-    if name == "" or phone == "":
-        messagebox.showwarning("Error", "Name and phone are required!")
+    if Nama_Pemesan == "" or phone == "":
+        messagebox.showwarning("Error", "Nama Pemesan atau Nomor Telepon Belum di Inputkan!")
     else:
         with open("biodata.txt", "a") as file:
-            file.write(f"Name: {name}\nPhone: {phone}\n\n")
+            file.write(f"Name: {Nama_Pemesan}\nPhone: {phone}\n\n")
         messagebox.showinfo("Success", "Biodata saved successfully!")
 
 # Membuat jendela utama
 root = Tk()
 root.title("Event Organizer")
-root.geometry("400x250")
+root.geometry("800x600")
 
 # Memuat gambar latar belakang
 background_image = Image.open("TemplateTI.png")
-background_image = background_image.resize((400, 250), Image.ANTIALIAS)
+background_image = background_image.resize((800, 600), Image.ANTIALIAS)
 bg_image = ImageTk.PhotoImage(background_image)
 
 # Menambahkan label untuk gambar latar belakang
@@ -83,26 +83,26 @@ login_button = Button(login_frame, text="Login", command=login)
 login_button.pack()
 
 # Menambahkan tombol Create Account
-create_account_button = Button(login_frame, text="Create Account", command=create_account)
+create_account_button = Button(login_frame, text="Buat Akun", command=create_account)
 create_account_button.pack()
 
 # Menambahkan frame untuk menu biodata
 biodata_frame = LabelFrame(root, text="Biodata", bg="white")
 
 # Menambahkan label dan entry untuk nama
-name_label = Label(biodata_frame, text="Name:", bg="white")
+name_label = Label(biodata_frame, text="Nama Pemesan:", bg="white")
 name_label.pack()
 name_entry = Entry(biodata_frame)
 name_entry.pack()
 
 # Menambahkan label dan entry untuk telepon
-phone_label = Label(biodata_frame, text="Phone:", bg="white")
+phone_label = Label(biodata_frame, text="Nomor Telepon:", bg="white")
 phone_label.pack()
 phone_entry = Entry(biodata_frame)
 phone_entry.pack()
 
 # Menambahkan tombol Save
-save_button = Button(biodata_frame, text="Save", command=save_biodata)
+save_button = Button(biodata_frame, text="Simpan Data", command=save_biodata)
 save_button.pack()
 
 # Menyembunyikan frame biodata
