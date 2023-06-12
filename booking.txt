@@ -3,3 +3,4 @@
 ['Rabu', '2023-06-28', 'Adhiwangsa Hotel & Convention']
 ['Kamis', '2023-06-29', 'Pose In Hotel']
 ['Selasa', '2023-06-27', 'The Royal Surakarta Heritage']
+['Senin', '2030-12-02', 'Ramada Suites']

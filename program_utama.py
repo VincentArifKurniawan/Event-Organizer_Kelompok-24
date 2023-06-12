@@ -83,3 +83,37 @@ def cek(x):
         datatempat.write(f'\n{str(x)}')
         print('Selamat, tempat yang Anda pesan tersedia! Silakan melanjutkan pesanan Anda.')
 cek(booking_data)
+#jenis dan nama acara
+namafixpria = []
+namafixwanita = []
+def namapria():
+    nama_pria = input('Nama Pria: ')
+    if all(x.isalpha() or x.isspace() for x in nama_pria):
+        namafixpria.append(nama_pria)
+    else: 
+        print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+        namapria()
+    return namafixpria[-1]
+
+def namawanita():
+    nama_wanita = input('Nama Wanita: ')
+    if all(x.isalpha() or x.isspace() for x in nama_wanita):
+        namafixwanita.append(nama_wanita)
+    else: 
+        print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+        namawanita()
+    return namafixwanita[-1]
+
+def jenis_acara():
+    print('='*50)
+    print('A. Lamaran')
+    print('B. Resepsi Pernikahan')
+    print('C. Pesta Ulang Tahun')
+    print('D. Ulang Tahun Pernikahan')
+    print('E. Gathering')
+    x = input('Acara apa yang akan Anda adakan? ')
+    if x.upper() == 'A':
+        print('Anda memilih acara lamaran')
+        data_klien.append(f'Lamaran {str(namapria())} dan {str(namawanita())}')
+jenis_acara()        
+print(data_klien)
