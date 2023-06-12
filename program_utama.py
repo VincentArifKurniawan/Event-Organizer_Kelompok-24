@@ -86,6 +86,9 @@ cek(booking_data)
 #jenis dan nama acara
 namafixpria = []
 namafixwanita = []
+namafixultah = []
+umurfixultah = []
+judulfix = []
 def namapria():
     nama_pria = input('Nama Pria: ')
     if all(x.isalpha() or x.isspace() for x in nama_pria):
@@ -104,6 +107,29 @@ def namawanita():
         namawanita()
     return namafixwanita[-1]
 
+def namaultah():
+    nama_ultah = input('Nama orang yang berulang tahun: ')
+    if all(x.isalpha() or x.isspace() for x in nama_ultah):
+        namafixultah.append(nama_ultah)
+    else:
+        print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+        namaultah()
+    return namafixultah[-1]
+
+def umurultah():
+    usia = input('Masukkan usia ulang tahun (angka): ')
+    if usia.isnumeric() == False:
+        print('Maaf, umur harus berupa karakter angka. Coba lagi')
+        umurultah()
+    else:
+        umurfixultah.append(usia)
+    return umurfixultah[-1]
+
+def judulgathering():
+    judul = input('Masukkan judul acara Anda: ')
+    judulfix.append(judul)
+    return judulfix[-1]
+
 def jenis_acara():
     print('='*50)
     print('A. Lamaran')
@@ -111,9 +137,32 @@ def jenis_acara():
     print('C. Pesta Ulang Tahun')
     print('D. Ulang Tahun Pernikahan')
     print('E. Gathering')
-    x = input('Acara apa yang akan Anda adakan? ')
-    if x.upper() == 'A':
-        print('Anda memilih acara lamaran')
-        data_klien.append(f'Lamaran {str(namapria())} dan {str(namawanita())}')
+    try:
+        x = input('Acara apa yang akan Anda adakan? ')
+        if x.upper() == 'A':
+            print('Anda memilih acara lamaran')
+            data_klien.append(f'Lamaran {str(namapria())} dan {str(namawanita())}')
+        if x.upper() != 'A':
+            if x.upper() == 'B':
+                print('Anda memilih acara resepsi pernikahan')
+                data_klien.append(f'Resepsi pernikahan {str(namapria())} dan {str(namawanita())}')
+            if x.upper() != 'B':
+                if x.upper() == 'C':
+                    print('Anda memilih acara pesta ulang tahun')
+                    data_klien.append(f'Pesta ulang tahun {str(namaultah())} ke-{str(umurultah())}')
+                if x.upper() != 'C':
+                    if x.upper == 'D':
+                        print('Anda memilih acara ulang tahun pernikahan')
+                        data_klien.append(f'Pesta ulang tahun pernikahan {str(namapria())} dan {str(namawanita())} yang ke-{str(umurultah())}')
+                    if x.upper() != 'D':
+                        if x.upper() == 'E':
+                            print('Anda memilih acara gathering')
+                            data_klien.append(f'Gathering {str(judulgathering)}')
+                        else:
+                            print('Input tidak valid')
+                            jenis_acara()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        jenis_acara()
 jenis_acara()        
 print(data_klien)

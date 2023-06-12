@@ -8,3 +8,5 @@
 =======
 ['Jumat', '2011-11-11', 'The Royal Surakarta Heritage']
 >>>>>>> 85260f27aa0d25006e0f2bb4cc420e6ea305d9c1
+
+['Rabu', '2023-06-28', 'Ramada Suites']
