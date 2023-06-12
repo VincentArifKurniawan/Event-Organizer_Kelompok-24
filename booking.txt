@@ -3,4 +3,8 @@
 ['Rabu', '2023-06-28', 'Adhiwangsa Hotel & Convention']
 ['Kamis', '2023-06-29', 'Pose In Hotel']
 ['Selasa', '2023-06-27', 'The Royal Surakarta Heritage']
+<<<<<<< HEAD
 ['Senin', '2030-12-02', 'Ramada Suites']
+=======
+['Jumat', '2011-11-11', 'The Royal Surakarta Heritage']
+>>>>>>> 85260f27aa0d25006e0f2bb4cc420e6ea305d9c1
