@@ -10,7 +10,6 @@ def pilihanD():
             dokum_dipilih.append('fotografi')
         if x.upper() != 'A':
             if x.upper() == 'B':
-                print(dokumentasi['fotografi dan videografi'])
                 dokum_dipilih.append('fotografi dan videografi')
             else: 
                 print('Input tidak valid')
