@@ -26,14 +26,19 @@ formasi = {'simple':{
     'big band':{
     'alat musik':'Drum, Bass, Keyboard, Gitar, Saxophone, Cello, Viola, Violin 1, Violin 2, Terompet, Trombone, Alto, Saxophone',
     'penyanyi': 4,
-    'harga': 10000000}
+    'harga': 10000000},
+
+    'tanpa live musik':{
+    'keterangan':'Musik disediakan oleh sound system',
+    'harga': 0
+    }
 }
 
 formasi_dipilih = []
 
 def pilihan():
     try:
-        x = input('Formasi apa yang mau dipilih? ')
+        x = input('Formasi apa yang Anda pilih? ')
         if x.upper() == 'A':
             print(formasi['simple'])
             formasi_dipilih.append('simple')
@@ -50,16 +55,20 @@ def pilihan():
                         print(formasi['exclusive band'])
                         formasi_dipilih.append('exclusive band')
                     if x.upper() != 'D':    
-                        if x == 'E':
+                        if x.upper() == 'E':
                             print(formasi['light orchestra'])
                             formasi_dipilih.append('light orchestra')
                         if x.upper() != 'E':
-                            if x == 'F':
+                            if x.upper() == 'F':
                                 print(formasi['big band'])
                                 formasi_dipilih.append('big band')
-                            else:
-                                print('Input tidak valid')
-                                pilihan()
+                            if x.upper() != 'F':
+                                if x.upper() == 'G':
+                                    print(formasi['tanpa live musik'])
+                                    formasi_dipilih.append('tanpa live musik')
+                                else:
+                                    print('Input tidak valid')
+                                    pilihan()
     except KeyboardInterrupt:
         print('\nMohon tidak menghentikan program secara paksa')
         pilihan()

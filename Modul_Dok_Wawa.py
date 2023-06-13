@@ -1,12 +1,32 @@
-dokumentasi = {'fotografi' : 1000000,'fotografi dan videografi' : 2000000}
+dokumentasi = {'fotografi' : {'harga':1000000},'fotografi dan videografi' : {'harga': 2000000}}
+
+dokum_dipilih =  []
 
 def pilihanD():
-    x = input('Pilihan dokumentasi apa yang anda pilih? ')
-    if x == 'fotografi':
-        print(dokumentasi['fotografi'])
-    if x == 'fotografi dan videografi':
-        print(dokumentasi['fotografi dan videografi'])
-    verifikasi = input('Processed? ')
-    if verifikasi == 'Y':
-        print('lanjut program berikutnya')
-    else: pilihanD()
+    try:
+        x = input('Pilihan dokumentasi apa yang Anda pilih? ')
+        if x.upper() == 'A':
+            print(dokumentasi['fotografi'])
+            dokum_dipilih.append('fotografi')
+        if x.upper() != 'A':
+            if x.upper() == 'B':
+                print(dokumentasi['fotografi dan videografi'])
+                dokum_dipilih.append('fotografi dan videografi')
+            else: 
+                print('Input tidak valid')
+                pilihanD()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        pilihanD()
+
+def verif():
+    verifikasi = input('Apakah Anda yakin? (Y/N) ')
+    if verifikasi.upper() == 'Y':
+        print(f'Formasi yang Anda pilih adalah {dokum_dipilih[-1]}')
+    if verifikasi.upper() != 'Y':
+        if verifikasi.upper() == 'N':
+            pilihanD()
+            verif()
+        else: 
+            print('Input tidak valid')
+            verif()

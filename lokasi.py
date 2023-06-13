@@ -1,30 +1,30 @@
 lokasi = {'The Royal Surakarta Heritage':{
     'jenis ruangan':'indoor',
-    'kapasitas': '600 orang',
+    'kapasitas': 600,
     'alamat': 'Jl.Slamet Riyadi No.6, Kp. Baru, Kec. Pasar Kliwon, Kota Surakarta',
     'harga': 45000000},
 
     'Pose In Hotel':{
     'jenis ruangan':'indoor',
-    'kapasitas': '100 orang',
+    'kapasitas': 100,
     'alamat': 'Jl. Mongisidi No.125, Kestalan, Kec. Banjarsari, Kota Surakarta',
     'harga': 16000000},
 
     'Graha Saba Buana':{
     'jenis ruangan':'indoor',
-    'kapasitas': '1000 orang',
+    'kapasitas': 1000,
     'alamat': 'Jl. Letjen Suprapto No.80-B, Sumber, Kec Banjarsari, Kota Surakarta',
     'harga': 105000000},
     
     'Ramada Suites':{
     'jenis ruangan':'outdoor',
-    'kapasitas': '200 orang',
+    'kapasitas': 200,
     'alamat': 'Jl, Adi Sucipto No.56, Gatak, Gajahan, Kec.Colomadu, Kab. Karanganyar',
     'harga': 50000000},
     
     'Adhiwangsa Hotel & Convention':{
     'jenis ruangan':'outdoor',
-    'kapasitas': '700 orang',
+    'kapasitas': 700,
     'alamat': 'Jl. Adi Sucipto No.146, Jajar, Kec. Laweyan, Kota Surakarta',
     'harga': 55000000}
 }
