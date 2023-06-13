@@ -21,7 +21,7 @@ def pilihanD():
 def verif():
     verifikasi = input('Apakah Anda yakin? (Y/N) ')
     if verifikasi.upper() == 'Y':
-        print(f'Formasi yang Anda pilih adalah {dokum_dipilih[-1]}')
+        print(f'Dokumentasi yang Anda pilih adalah {dokum_dipilih[-1]}')
     if verifikasi.upper() != 'Y':
         if verifikasi.upper() == 'N':
             pilihanD()
