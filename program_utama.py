@@ -1,6 +1,7 @@
 #program utama untuk di-run di terminal
 from datetime import date
 from dateutil.relativedelta import relativedelta
+
 TanggalBase = date(1800,1,1)
 hari = ["Rabu", "Kamis", "Jumat", "Sabtu", "Minggu", "Senin", "Selasa"]
 data_klien = []
@@ -32,10 +33,10 @@ print('='*50)
 def tanggal():
     while True:
         print('Notes: Anda hanya dapat mengadakan acara secepat-cepatnya satu bulan dari sekarang.')
-        print('Kapan Anda akan mengadakan acara?')
-        dd = int(input('Tanggal = '))
-        mm = int(input('Bulan = '))
-        yy = int(input('Tahun = '))
+        print('Kapan Anda akan mengadakan acara? (DD/MM/YYYY)') 
+        dd = int(input('Tanggal - Masukkan angka tanggal (DD) = '))
+        mm = int(input('Bulan - Masukkan angka bulan (MM) = '))
+        yy = int(input('Tahun - Masukkan angka tahun (YYYY) = '))
         tanggal_acara = date(int(yy), int(mm), int(dd))
         tanggal_limit = date.today() + relativedelta(months=+1)
         if tanggal_acara < tanggal_limit:
@@ -242,31 +243,118 @@ def pilih_dokum():
     data_klien.append(md.dokum_dipilih[-1])
 pilih_dokum()
 #preview output
-#contoh akses harga: print(band.formasi[data_klien[5]]['harga'])
 biaya_total = 0
 print('='*50)
 print('='*50)
 print('PREVIEW BIAYA PENGADAAN EVENT')
-print(f'Nama Klien = {data_klien[0]}')
-print(f'Nomor telepon klien = {data_klien[1]}')
-print(f'Acara yang diadakan = {data_klien[2]}')
-print(f'Waktu pelaksanaan acara = {booking_data[0]}, {booking_data[1]}')
-print(f'Lokasi pelaksanaan acara = {booking_data[2]}, biaya = {lokasi.lokasi[booking_data[2]]["harga"]}')
-biaya_total += lokasi.lokasi[booking_data[2]]["harga"]
-print(f'Jumlah undangan = {data_klien[3]} orang')
-if data_klien[4] == 'Digital':
-    print(f'Jenis undangan = {data_klien[4]}, biaya = {(undt.undangan[data_klien[4]]["Dengan harga"])}')
-    biaya_total += undt.undangan[data_klien[4]]["Dengan harga"]
-else:
-    print(f'Jenis undangan = {data_klien[4]}, biaya = {(undt.undangan[data_klien[4]]["Dengan harga"])*data_klien[3]}')
-    biaya_total += (undt.undangan[data_klien[4]]["Dengan harga"])*data_klien[3]
-print(f'Formasi musik = {data_klien[5]}, biaya = {band.formasi[data_klien[5]]["harga"]}')
-biaya_total += band.formasi[data_klien[5]]["harga"]
-print(f'Tipe hidangan = {data_klien[6]}, biaya = {(hidangan.tipe_hidangan[data_klien[6]]["harga"])*data_klien[3]}')
-biaya_total += (hidangan.tipe_hidangan[data_klien[6]]["harga"])*data_klien[3]
-print(f'MC = {data_klien[7]}, biaya = {mc.opsi_mc[data_klien[7]]["harga"]}')
-biaya_total += mc.opsi_mc[data_klien[7]]["harga"]
-print(f'Tipe dokumentasi = {data_klien[8]}, biaya = {md.dokumentasi[data_klien[8]]["harga"]}')
-biaya_total += md.dokumentasi[data_klien[8]]["harga"]
-print('Estimasi Biaya Total (belum termasuk sewa kostum jika menghendaki:)')
-print('Rp',biaya_total,',00')
+def preview():
+    global biaya_total
+    print(f'Nama Klien = {data_klien[0]}')
+    print(f'Nomor telepon klien = {data_klien[1]}')
+    print(f'Acara yang diadakan = {data_klien[2]}')
+    print(f'Waktu pelaksanaan acara = {booking_data[0]}, {booking_data[1]}')
+    print(f'Lokasi pelaksanaan acara = {booking_data[2]}, biaya = {"Rp{:,.2f}".format(lokasi.lokasi[booking_data[2]]["harga"])}')
+    biaya_total += lokasi.lokasi[booking_data[2]]["harga"]
+    print(f'Jumlah undangan = {data_klien[3]} orang')
+    if data_klien[4] == 'Digital':
+        print(f'Jenis undangan = {data_klien[4]}, biaya = {"Rp{:,.2f}".format(undt.undangan[data_klien[4]]["Dengan harga"])}')
+        biaya_total += undt.undangan[data_klien[4]]["Dengan harga"]
+    else:
+        print(f'Jenis undangan = {data_klien[4]}, biaya = {"Rp{:,.2f}".format((undt.undangan[data_klien[4]]["Dengan harga"])*data_klien[3])}')
+        biaya_total += (undt.undangan[data_klien[4]]["Dengan harga"])*data_klien[3]
+    print(f'Formasi musik = {data_klien[5]}, biaya = {"Rp{:,.2f}".format(band.formasi[data_klien[5]]["harga"])}')
+    biaya_total += band.formasi[data_klien[5]]["harga"]
+    print(f'Tipe hidangan = {data_klien[6]}, biaya = {"Rp{:,.2f}".format((hidangan.tipe_hidangan[data_klien[6]]["harga"])*data_klien[3])}')
+    biaya_total += (hidangan.tipe_hidangan[data_klien[6]]["harga"])*data_klien[3]
+    print(f'MC = {data_klien[7]}, biaya = {"Rp{:,.2f}".format(mc.opsi_mc[data_klien[7]]["harga"])}')
+    biaya_total += mc.opsi_mc[data_klien[7]]["harga"]
+    print(f'Tipe dokumentasi = {data_klien[8]}, biaya = {"Rp{:,.2f}".format(md.dokumentasi[data_klien[8]]["harga"])}')
+    biaya_total += md.dokumentasi[data_klien[8]]["harga"]
+    print('Estimasi Biaya Total (belum termasuk sewa kostum jika menghendaki:)')
+    print("Rp{:,.2f}".format(biaya_total))
+preview()
+#contact person
+import random
+cp = open('contact_person.txt').read().splitlines()
+pilih_cp = random.choice(cp)
+print(f'Contact Person: {pilih_cp}')
+#Nota
+def nota():
+    print('='*50)
+    print('='*50)
+    print('NOTA PENGADAAN EVENT')
+    preview()
+    print('LUNAS')
+    print('='*50)
+    print('='*50)
+#pembayaran
+print('Silakan melanjutkan ke pembayaran.')
+print('A. BCA')
+print('B. Mandiri')
+print('C. BNI')
+def carabayar():
+    try:
+        cara_bayar = input('Anda akan membayar melalui bank apa? ')
+        if cara_bayar.upper() == 'A':
+            print('Nomor rekening bank BCA = 1234567890 a.n. abcdefg')
+        if cara_bayar.upper() != 'A':
+            if cara_bayar.upper() == 'B':
+                print('Nomor rekening bank Mandiri = 1234567890 a.n. abcdefg')
+            if cara_bayar.upper() != 'B':
+                if cara_bayar.upper() == 'C':
+                    print('Nomor rekening bank BNI = 1234567890 a.n. abcdefg')
+                else:
+                    print('Input tidak valid')
+                    carabayar()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        carabayar()
+carabayar()
+import random
+kode_otp = random.randrange(100000,999999)
+def generate():
+    kesempatan = 3
+    x = open('otp.txt', 'w')
+    tulis = str(kode_otp)
+    x.write(tulis)
+    x.close()
+    print('Mohon perhatikan bahwa kesempatan Anda mengisi kode OTP hanya 3 kali.')
+    while kesempatan != 0:
+        otp_input = int(input('Masukkan kode OTP = '))
+        if otp_input != kode_otp:
+            print(f'Coba lagi. Kesempatan Anda {kesempatan - 1} kali.')
+            kesempatan -= 1
+        else:
+            print('Terima kasih! Pembayaran telah terverifikasi.')
+            nota()
+            break
+    if kesempatan == 0:
+        print('Anda gagal verifikasi pembayaran sebanyak 3 kali.\nMohon maaf, pesanan Anda kami anggap tidak valid.')
+        with open('booking.txt','r') as baca_datatempat:
+            data_ada = baca_datatempat.readlines()
+        datahapus = str(booking_data)
+        with open('booking.txt','w') as baca_datatempat:
+            for baris in data_ada:
+                if baris.strip('\n') != datahapus:
+                    baca_datatempat.write(baris)
+        booking_data.clear()
+        data_klien.clear()
+generate()
+#catat output valid
+with open('output_valid_klien.txt','a') as f:
+    print('='*50, file=f)
+    print(f'Nama Klien = {data_klien[0]}',file=f)
+    print(f'Nomor telepon klien = {data_klien[1]}',file=f)
+    print(f'Acara yang diadakan = {data_klien[2]}',file=f)
+    print(f'Waktu pelaksanaan acara = {booking_data[0]}, {booking_data[1]}',file=f)
+    print(f'Lokasi pelaksanaan acara = {booking_data[2]}',file=f)
+    print(f'Jumlah undangan = {data_klien[3]} orang',file=f)
+    print(f'Jenis undangan = {data_klien[4]}',file=f)
+    print(f'Formasi musik = {data_klien[5]}',file=f)
+    print(f'Tipe hidangan = {data_klien[6]}',file=f)
+    print(f'MC = {data_klien[7]}',file=f)
+    print(f'Tipe dokumentasi = {data_klien[8]}',file=f)
+    print('Estimasi Biaya Total:',file=f)
+    print("Rp{:,.2f}".format(biaya_total),file=f)
+    print('='*50, file=f)
+    print('\n',file=f)

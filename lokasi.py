@@ -33,7 +33,7 @@ tempat_dipilih = []
 
 def pilihan():
     try:
-        x = str(input('Pilih di sini (cukup ketikkan huruf depan) = '))
+        x = str(input('Pilih di sini (A/B/C/D/E) = '))
         if x.upper() == 'A':
             print(lokasi['The Royal Surakarta Heritage'])
             tempat_dipilih.append('The Royal Surakarta Heritage')

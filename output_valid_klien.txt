@@ -1,0 +1,17 @@
+==================================================
+Nama Klien = Vincent Arif Kurniawan
+Nomor telepon klien = +6282133835575
+Acara yang diadakan = Gathering Natal
+Waktu pelaksanaan acara = Kamis, 2025-12-25
+Lokasi pelaksanaan acara = Ramada Suites
+Jumlah undangan = 200 orang
+Jenis undangan = Digital
+Formasi musik = exclusive band
+Tipe hidangan = prasmanan
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Estimasi Biaya Total:
+Rp123,200,000.00
+==================================================
+
+
