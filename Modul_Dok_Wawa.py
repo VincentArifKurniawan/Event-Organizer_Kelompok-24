@@ -36,5 +36,3 @@ def verif():
     except KeyboardInterrupt:
         print('\nMohon tidak menghentikan program secara paksa')
         verif()      
-pilihanD()
-verif()
