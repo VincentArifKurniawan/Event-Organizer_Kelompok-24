@@ -49,3 +49,37 @@ Rp27,800,000.00
 ==================================================
 
 
+==================================================
+Nama Klien = Agata
+Nomor telepon klien = +620987654321
+Acara yang diadakan = Gathering Asek Asek Joss
+Waktu pelaksanaan acara = Senin, 2024-01-01
+Lokasi pelaksanaan acara = The Royal Surakarta Heritage
+Jumlah undangan = 600 orang
+Jenis undangan = Digital
+Formasi musik = big band
+Tipe hidangan = prasmanan
+MC = 2 orang
+Tipe dokumentasi = fotografi dan videografi
+Estimasi Biaya Total:
+Rp77,695,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Regovinna
+Nomor telepon klien = +621234567890
+Acara yang diadakan = Gathering Bahas TuBes Prokom
+Waktu pelaksanaan acara = Selasa, 2023-12-12
+Lokasi pelaksanaan acara = The Royal Surakarta Heritage
+Jumlah undangan = 600 orang
+Jenis undangan = Digital
+Formasi musik = big band
+Tipe hidangan = catering
+MC = 2 orang
+Tipe dokumentasi = fotografi dan videografi
+Estimasi Biaya Total:
+Rp95,695,000.00
+==================================================
+
+
