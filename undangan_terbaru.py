@@ -19,14 +19,17 @@ def cover():
     try:
         x = input('Pilih jenis cetak isi undangan! (A/B/C) ')
         if x.upper() == 'A':
+            print('Undangan berjenis Hard Cover adalah undangan fisik yang\ndapat Anda berikan kepada setiap tamu yang diundang\ndengan bahan hard cover yang awet.\nBiaya percetakan akan dikalikan jumlah undangan.')
             print(undangan['Hard Cover'])
             cover_dipilih.append('Hard Cover')
         if x.upper() != 'A':
             if x.upper() == 'B':
+                print('Undangan berjenis Soft Cover adalah undangan fisik yang\ndapat Anda berikan kepada setiap tamu yang diundang\ndengan bahan kertas yang tebal.\nBiaya percetakan akan dikalikan jumlah undangan.')
                 print(undangan['Soft Cover'])
                 cover_dipilih.append('Soft Cover')
             if x.upper() != 'B':
                 if x.upper() == 'C':
+                    print('Undangan berjenis Digital adalah undangan digital yang\nberupa link atau file gambar yang dapat Anda berikan\nkepada setiap tamu melalui media komunikasi elektronik.\nBiaya yang tercantum tidak dikenakan biaya percetakan.')
                     print(undangan['Digital'])
                     cover_dipilih.append('Digital')
                 else:
@@ -41,7 +44,7 @@ def verif():
     try:
         verifikasi = input('Apakah Anda yakin? (Y/N) ')
         if verifikasi.upper() == 'Y':
-            print(f'Tempat yang Anda pilih adalah {cover_dipilih[-1]}')
+            print(f'Jenis undangan yang Anda pilih adalah {cover_dipilih[-1]}')
         if verifikasi.upper() != 'Y':
             if verifikasi.upper() == 'N':
                 cover()
@@ -51,4 +54,4 @@ def verif():
                 verif()
     except KeyboardInterrupt:
         print('\nMohon tidak menghentikan program secara paksa')
-        verif()      
+        verif()

@@ -6,10 +6,13 @@ def pilihanD():
     try:
         x = input('Pilihan dokumentasi apa yang Anda pilih? (A/B) ')
         if x.upper() == 'A':
+            print('Dengan memilih paket fotografi, Anda akan mudah berkoordinasi\ndengan tim dokumentasi kami agar mendapatkan kualitas\nfoto sesuai yang Anda inginkan.')
             print(dokumentasi['fotografi'])
             dokum_dipilih.append('fotografi')
         if x.upper() != 'A':
             if x.upper() == 'B':
+                print('Dengan memilih paket fotografi dan videografi, tentunya Anda\ntidak hanya puas dengan hasil foto dari tim dokumentasi kami,\ntapi tim dokumentasi kami juga akan memfasilitasi Anda\ndengan pembuatan video berkualitas tinggi.')
+                print(dokumentasi['fotografi dan videografi'])
                 dokum_dipilih.append('fotografi dan videografi')
             else: 
                 print('Input tidak valid')
@@ -33,3 +36,5 @@ def verif():
     except KeyboardInterrupt:
         print('\nMohon tidak menghentikan program secara paksa')
         verif()      
+pilihanD()
+verif()
