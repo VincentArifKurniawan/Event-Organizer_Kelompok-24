@@ -23,16 +23,20 @@ def input_jumlah_mc():
         input_jumlah_mc()
 
 def verif():
-    verifikasi = input('Apakah Anda yakin? (Y/N) ')
-    if verifikasi.upper() == 'Y':
-        print(f'Jumlah MC yang Anda pilih adalah {mc_dipilih[-1]}')
-    if verifikasi.upper() != 'Y':
-        if verifikasi.upper() == 'N':
-            main()
-            verif()
-        else: 
-            print('Input tidak valid')
-            verif()
+    try:
+        verifikasi = input('Apakah Anda yakin? (Y/N) ')
+        if verifikasi.upper() == 'Y':
+            print(f'Jumlah MC yang Anda pilih adalah {mc_dipilih[-1]}')
+        if verifikasi.upper() != 'Y':
+            if verifikasi.upper() == 'N':
+                main()
+                verif()
+            else: 
+                print('Input tidak valid')
+                verif()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        verif()      
 
 def main():
     tampilkan_pilihan_mc()

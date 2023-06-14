@@ -1,17 +1,51 @@
 ==================================================
-Nama Klien = Vincent Arif Kurniawan
-Nomor telepon klien = +6282133835575
-Acara yang diadakan = Gathering Natal
-Waktu pelaksanaan acara = Kamis, 2025-12-25
-Lokasi pelaksanaan acara = Ramada Suites
-Jumlah undangan = 200 orang
+Nama Klien = Vivi
+Nomor telepon klien = +6281227968872
+Acara yang diadakan = Gathering Reuni SMP
+Waktu pelaksanaan acara = Jumat, 2030-06-28
+Lokasi pelaksanaan acara = Pose In Hotel
+Jumlah undangan = 80 orang
 Jenis undangan = Digital
-Formasi musik = exclusive band
-Tipe hidangan = prasmanan
+Formasi musik = tanpa live musik
+Tipe hidangan = catering
 MC = 1 orang
 Tipe dokumentasi = fotografi
 Estimasi Biaya Total:
-Rp123,200,000.00
+Rp23,000,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Vincent
+Nomor telepon klien = +6282133835575
+Acara yang diadakan = Pesta ulang tahun Vincent ke-20
+Waktu pelaksanaan acara = Jumat, 2024-06-28
+Lokasi pelaksanaan acara = Adhiwangsa Hotel & Convention
+Jumlah undangan = 560 orang
+Jenis undangan = Hard Cover
+Formasi musik = exclusive band
+Tipe hidangan = catering
+MC = 2 orang
+Tipe dokumentasi = fotografi dan videografi
+Estimasi Biaya Total:
+Rp101,455,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Victor
+Nomor telepon klien = +6281210554789
+Acara yang diadakan = Lamaran Victor dan Lina
+Waktu pelaksanaan acara = Minggu, 2023-11-26
+Lokasi pelaksanaan acara = Pose In Hotel
+Jumlah undangan = 100 orang
+Jenis undangan = Digital
+Formasi musik = exclusive band
+Tipe hidangan = catering
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Estimasi Biaya Total:
+Rp27,800,000.00
 ==================================================
 
 

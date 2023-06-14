@@ -6,7 +6,7 @@ hidangan_dipilih = []
 
 def makanan():
     try:
-        x = input('Anda memilih tipe hidangan apa? ') 
+        x = input('Anda memilih tipe hidangan apa? (A/B) ') 
         if x.upper() == 'A':
             print('Prasmanan adalah tipe hidangan yang disajikan pada suatu meja \nsecara berjajar, dan para tamu dapat mengambil makanan sendiri\ndengan mengantri.')
             print(tipe_hidangan['prasmanan'])
@@ -24,13 +24,17 @@ def makanan():
         makanan()
         
 def verif():
-    verifikasi = input('Apakah Anda yakin? (Y/N) ')
-    if verifikasi.upper() == 'Y':
-        print(f'Tipe hidangan yang Anda pilih adalah {hidangan_dipilih[-1]}')
-    if verifikasi.upper() != 'Y':
-        if verifikasi.upper() == 'N':
-            makanan()
-            verif()
-        else: 
-            print('Input tidak valid')
-            verif()
+    try:
+        verifikasi = input('Apakah Anda yakin? (Y/N) ')
+        if verifikasi.upper() == 'Y':
+            print(f'Tipe hidangan yang Anda pilih adalah {hidangan_dipilih[-1]}')
+        if verifikasi.upper() != 'Y':
+            if verifikasi.upper() == 'N':
+                makanan()
+                verif()
+            else: 
+                print('Input tidak valid')
+                verif()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        verif()      

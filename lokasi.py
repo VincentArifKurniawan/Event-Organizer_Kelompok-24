@@ -61,13 +61,17 @@ def pilihan():
         pilihan()
     
 def verif():
-    verifikasi = input('Apakah Anda yakin? (Y/N) ')
-    if verifikasi.upper() == 'Y':
-        print(f'Tempat yang Anda pilih adalah {tempat_dipilih[-1]}')
-    if verifikasi.upper() != 'Y':
-        if verifikasi.upper() == 'N':
-            pilihan()
-            verif()
-        else: 
-            print('Input tidak valid')
-            verif()
+    try:
+        verifikasi = input('Apakah Anda yakin? (Y/N) ')
+        if verifikasi.upper() == 'Y':
+            print(f'Tempat yang Anda pilih adalah {tempat_dipilih[-1]}')
+        if verifikasi.upper() != 'Y':
+            if verifikasi.upper() == 'N':
+                pilihan()
+                verif()
+            else: 
+                print('Input tidak valid')
+                verif()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        verif()      

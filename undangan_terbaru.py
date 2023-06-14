@@ -17,7 +17,7 @@ cover_dipilih = []
 
 def cover():
     try:
-        x = input('Pilih jenis cetak isi undangan! ')
+        x = input('Pilih jenis cetak isi undangan! (A/B/C) ')
         if x.upper() == 'A':
             print(undangan['Hard Cover'])
             cover_dipilih.append('Hard Cover')
@@ -38,13 +38,17 @@ def cover():
         
 
 def verif():
-    verifikasi = input('Apakah Anda yakin? (Y/N) ')
-    if verifikasi.upper() == 'Y':
-        print(f'Tempat yang Anda pilih adalah {cover_dipilih[-1]}')
-    if verifikasi.upper() != 'Y':
-        if verifikasi.upper() == 'N':
-            cover()
-            verif()
-        else: 
-            print('Input tidak valid')
-            verif()
+    try:
+        verifikasi = input('Apakah Anda yakin? (Y/N) ')
+        if verifikasi.upper() == 'Y':
+            print(f'Tempat yang Anda pilih adalah {cover_dipilih[-1]}')
+        if verifikasi.upper() != 'Y':
+            if verifikasi.upper() == 'N':
+                cover()
+                verif()
+            else: 
+                print('Input tidak valid')
+                verif()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        verif()      

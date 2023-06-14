@@ -35,3 +35,9 @@
 ['Jumat', '2024-06-28', 'The Royal Surakarta Heritage']
 ['Minggu', '2024-04-28', 'Pose In Hotel']
 ['Kamis', '2025-12-25', 'Ramada Suites']
+['Minggu', '2032-12-12', 'Adhiwangsa Hotel & Convention']
+['Jumat', '2030-06-28', 'Pose In Hotel']
+['Jumat', '2024-06-28', 'Adhiwangsa Hotel & Convention']
+['Minggu', '2023-11-26', 'Ramada Suites']
+
+['Minggu', '2023-11-26', 'Pose In Hotel']

@@ -38,7 +38,7 @@ formasi_dipilih = []
 
 def pilihan():
     try:
-        x = input('Formasi apa yang Anda pilih? ')
+        x = input('Formasi apa yang Anda pilih? (A/B/C/D/E/F/G) ')
         if x.upper() == 'A':
             print(formasi['simple'])
             formasi_dipilih.append('simple')
@@ -74,14 +74,17 @@ def pilihan():
         pilihan()
 
 def verif():
-    verifikasi = input('Apakah Anda yakin? (Y/N) ')
-    if verifikasi.upper() == 'Y':
-        print(f'Formasi yang Anda pilih adalah {formasi_dipilih[-1]}')
-    if verifikasi.upper() != 'Y':
-        if verifikasi.upper() == 'N':
-            pilihan()
-            verif()
-        else: 
-            print('Input tidak valid')
-            verif()
-
+    try:
+        verifikasi = input('Apakah Anda yakin? (Y/N) ')
+        if verifikasi.upper() == 'Y':
+            print(f'Formasi yang Anda pilih adalah {formasi_dipilih[-1]}')
+        if verifikasi.upper() != 'Y':
+            if verifikasi.upper() == 'N':
+                pilihan()
+                verif()
+            else: 
+                print('Input tidak valid')
+                verif()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        verif()      

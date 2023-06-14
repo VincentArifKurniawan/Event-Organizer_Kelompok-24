@@ -12,43 +12,67 @@ print('EVENT ORGANIZER PROGRAM \nJust For You!')
 print('Kelola event yang ingin Anda adakan dengan \ncepat dan mudah, tanpa ribet!')
 print('Courtesy of Kelompok 24 Kelas D IMPERIALE')
 print('='*50)
+data_klien = []
 def nama_input():
-    nama = input('Masukkan nama Anda = ')
-    if all(x.isalpha() or x.isspace() for x in nama):
-        data_klien.append(nama)
-    else: 
-        print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+    try:
+        nama = str(input('Masukkan nama Anda = '))
+        kondisi1 = all(x.isspace() for x in nama)
+        kondisi2 = all(x.isalpha() for x in nama)
+        kondisi3 = all(x.isalpha() or x.isspace() for x in nama)
+        if kondisi1 == True:
+            print('Maaf, nama tidak dapat berupa karakter kosong.')
+            nama_input()
+        elif kondisi2 == True:
+            data_klien.append(nama)
+        elif kondisi3 == True:
+            data_klien.append(nama)
+        else: 
+            print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+            nama_input()
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
         nama_input()
 nama_input()
 def no_telp_input():
-    no_telp = input('Masukkan nomor telepon Anda = +62')
-    cek_no_telp = no_telp.isnumeric()
-    if cek_no_telp == False:
-        print('Maaf, nomor telepon harus berupa karakter angka. Coba lagi')
+    try:
+        no_telp = input('Masukkan nomor telepon Anda = +62')
+        cek_no_telp = no_telp.isnumeric()
+        if cek_no_telp == False:
+            print('Maaf, nomor telepon harus berupa karakter angka. Coba lagi')
+            no_telp_input()
+        else: data_klien.append(f'+62{no_telp}')
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
         no_telp_input()
-    else: data_klien.append(f'+62{no_telp}')
 no_telp_input()
 print('='*50)
 #tanggal acara
 def tanggal():
-    while True:
-        print('Notes: Anda hanya dapat mengadakan acara secepat-cepatnya satu bulan dari sekarang.')
-        print('Kapan Anda akan mengadakan acara? (DD/MM/YYYY)') 
-        dd = int(input('Tanggal - Masukkan angka tanggal (DD) = '))
-        mm = int(input('Bulan - Masukkan angka bulan (MM) = '))
-        yy = int(input('Tahun - Masukkan angka tahun (YYYY) = '))
-        tanggal_acara = date(int(yy), int(mm), int(dd))
-        tanggal_limit = date.today() + relativedelta(months=+1)
-        if tanggal_acara < tanggal_limit:
-            print('Coba lagi.')
-        else:
-            print('Tanggal valid.')
-            break
-    selisih = tanggal_acara - TanggalBase
-    index_hari = selisih.days % 7
-    hari_acara = hari[index_hari]
-    booking_data.append(hari_acara)
-    booking_data.append(str(tanggal_acara))
+    try:
+        while True:
+            print('Notes: Anda hanya dapat mengadakan acara secepat-cepatnya satu bulan dari sekarang.')
+            print('Kapan Anda akan mengadakan acara? (DD/MM/YYYY)') 
+            dd = int(input('Tanggal - Masukkan angka tanggal (DD) = '))
+            mm = int(input('Bulan - Masukkan angka bulan (MM) = '))
+            yy = int(input('Tahun - Masukkan angka tahun (YYYY) = '))
+            tanggal_acara = date(int(yy), int(mm), int(dd))
+            tanggal_limit = date.today() + relativedelta(months=+1)
+            if tanggal_acara < tanggal_limit:
+                print('Coba lagi.')
+            else:
+                print('Tanggal valid.')
+                break
+        selisih = tanggal_acara - TanggalBase
+        index_hari = selisih.days % 7
+        hari_acara = hari[index_hari]
+        booking_data.append(hari_acara)
+        booking_data.append(str(tanggal_acara))
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa')
+        tanggal()
+    except ValueError:
+        print('\nMohon memberikan input dengan benar')
+        tanggal()
 tanggal()
 #tempat
 import lokasi
@@ -99,30 +123,54 @@ umurfixultah = []
 judulfix = []
 def namapria():
     nama_pria = input('Nama Pria: ')
-    if all(x.isalpha() or x.isspace() for x in nama_pria):
+    kondisi1 = all(x.isspace() for x in nama_pria)
+    kondisi2 = all(x.isalpha() for x in nama_pria)
+    kondisi3 = all(x.isalpha() or x.isspace() for x in nama_pria)
+    if kondisi1 == True:
+        print('Maaf, nama tidak dapat berupa karakter kosong.')
+        namapria()
+    elif kondisi2 == True:
+        namafixpria.append(nama_pria)
+    elif kondisi3 == True:
         namafixpria.append(nama_pria)
     else: 
         print('Maaf, nama harus berupa karakter huruf. Coba lagi')
         namapria()
-    return namafixpria[-1]
+    return namafixpria[0]
 
 def namawanita():
     nama_wanita = input('Nama Wanita: ')
-    if all(x.isalpha() or x.isspace() for x in nama_wanita):
+    kondisi1 = all(x.isspace() for x in nama_wanita)
+    kondisi2 = all(x.isalpha() for x in nama_wanita)
+    kondisi3 = all(x.isalpha() or x.isspace() for x in nama_wanita)
+    if kondisi1 == True:
+        print('Maaf, nama tidak dapat berupa karakter kosong.')
+        namawanita()
+    elif kondisi2 == True:
+        namafixwanita.append(nama_wanita)
+    elif kondisi3 == True:
         namafixwanita.append(nama_wanita)
     else: 
         print('Maaf, nama harus berupa karakter huruf. Coba lagi')
         namawanita()
-    return namafixwanita[-1]
+    return namafixwanita[0]
 
 def namaultah():
     nama_ultah = input('Nama orang yang berulang tahun: ')
-    if all(x.isalpha() or x.isspace() for x in nama_ultah):
+    kondisi1 = all(x.isspace() for x in nama_ultah)
+    kondisi2 = all(x.isalpha() for x in nama_ultah)
+    kondisi3 = all(x.isalpha() or x.isspace() for x in nama_ultah)
+    if kondisi1 == True:
+        print('Maaf, nama tidak dapat berupa karakter kosong.')
+        namaultah()
+    elif kondisi2 == True:
+        namafixultah.append(nama_ultah)
+    elif kondisi3 == True:
         namafixultah.append(nama_ultah)
     else:
         print('Maaf, nama harus berupa karakter huruf. Coba lagi')
         namaultah()
-    return namafixultah[-1]
+    return namafixultah[0]
 
 def umurultah():
     usia = input('Masukkan usia ulang tahun (angka): ')
@@ -131,12 +179,24 @@ def umurultah():
         umurultah()
     else:
         umurfixultah.append(usia)
-    return umurfixultah[-1]
+    return umurfixultah[0]
 
 def judulgathering():
     judul = input('Masukkan judul acara Anda: ')
-    judulfix.append(judul)
-    return judulfix[-1]
+    kondisi1 = all(x.isspace() for x in judul)
+    kondisi2 = all(x.isalpha() for x in judul)
+    kondisi3 = all(x.isalnum() or x.isspace() for x in judul)
+    if kondisi1 == True:
+        print('Maaf, judul tidak dapat berupa karakter kosong.')
+        judulgathering()
+    elif kondisi2 == True:
+        judulfix.append(judul)
+    elif kondisi3 == True:
+        judulfix.append(judul)
+    else: 
+        print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+        judulgathering()
+    return judulfix[0]
 
 def jenis_acara():
     print('='*50)
@@ -146,7 +206,7 @@ def jenis_acara():
     print('D. Ulang Tahun Pernikahan')
     print('E. Gathering')
     try:
-        x = input('Acara apa yang akan Anda adakan? ')
+        x = input('Acara apa yang akan Anda adakan? (A/B/C/D/E) ')
         if x.upper() == 'A':
             print('Anda memilih acara lamaran')
             data_klien.append(f'Lamaran {str(namapria())} dan {str(namawanita())}')
@@ -242,6 +302,20 @@ def pilih_dokum():
     md.verif()
     data_klien.append(md.dokum_dipilih[-1])
 pilih_dokum()
+#paket cetak foto
+import cetak
+print('='*50)
+print('A. Paket Kenangan')
+print('B. Paket Kenangan Plus')
+print('C. Paket Pajangan')
+print('D. Paket BigScreen')
+print('E. Paket Komplit')
+print('F. Tanpa Percetakan')
+def pilih_cetak():
+    cetak.pilihancetak()
+    cetak.verif()
+    data_klien.append(cetak.cetak_dipilih[-1])
+pilih_cetak()
 #preview output
 biaya_total = 0
 print('='*50)
@@ -270,6 +344,8 @@ def preview():
     biaya_total += mc.opsi_mc[data_klien[7]]["harga"]
     print(f'Tipe dokumentasi = {data_klien[8]}, biaya = {"Rp{:,.2f}".format(md.dokumentasi[data_klien[8]]["harga"])}')
     biaya_total += md.dokumentasi[data_klien[8]]["harga"]
+    print(f'Percetakan = {data_klien[9]}, biaya = {"Rp{:,.2f}".format(cetak.paket_cetak[data_klien[9]]["harga"])}')
+    biaya_total += cetak.paket_cetak[data_klien[9]]["harga"]
     print('Estimasi Biaya Total (belum termasuk sewa kostum jika menghendaki:)')
     print("Rp{:,.2f}".format(biaya_total))
 preview()
@@ -280,6 +356,8 @@ pilih_cp = random.choice(cp)
 print(f'Contact Person: {pilih_cp}')
 #Nota
 def nota():
+    global biaya_total
+    biaya_total = 0
     print('='*50)
     print('='*50)
     print('NOTA PENGADAAN EVENT')
@@ -287,6 +365,25 @@ def nota():
     print('LUNAS')
     print('='*50)
     print('='*50)
+#catat output valid
+def catat_output():
+    with open('output_valid_klien.txt','a') as f:
+        print('='*50, file=f)
+        print(f'Nama Klien = {data_klien[0]}',file=f)
+        print(f'Nomor telepon klien = {data_klien[1]}',file=f)
+        print(f'Acara yang diadakan = {data_klien[2]}',file=f)
+        print(f'Waktu pelaksanaan acara = {booking_data[0]}, {booking_data[1]}',file=f)
+        print(f'Lokasi pelaksanaan acara = {booking_data[2]}',file=f)
+        print(f'Jumlah undangan = {data_klien[3]} orang',file=f)
+        print(f'Jenis undangan = {data_klien[4]}',file=f)
+        print(f'Formasi musik = {data_klien[5]}',file=f)
+        print(f'Tipe hidangan = {data_klien[6]}',file=f)
+        print(f'MC = {data_klien[7]}',file=f)
+        print(f'Tipe dokumentasi = {data_klien[8]}',file=f)
+        print('Estimasi Biaya Total:',file=f)
+        print("Rp{:,.2f}".format(biaya_total),file=f)
+        print('='*50, file=f)
+        print('\n',file=f)
 #pembayaran
 print('Silakan melanjutkan ke pembayaran.')
 print('A. BCA')
@@ -327,6 +424,7 @@ def generate():
         else:
             print('Terima kasih! Pembayaran telah terverifikasi.')
             nota()
+            catat_output()
             break
     if kesempatan == 0:
         print('Anda gagal verifikasi pembayaran sebanyak 3 kali.\nMohon maaf, pesanan Anda kami anggap tidak valid.')
@@ -340,21 +438,3 @@ def generate():
         booking_data.clear()
         data_klien.clear()
 generate()
-#catat output valid
-with open('output_valid_klien.txt','a') as f:
-    print('='*50, file=f)
-    print(f'Nama Klien = {data_klien[0]}',file=f)
-    print(f'Nomor telepon klien = {data_klien[1]}',file=f)
-    print(f'Acara yang diadakan = {data_klien[2]}',file=f)
-    print(f'Waktu pelaksanaan acara = {booking_data[0]}, {booking_data[1]}',file=f)
-    print(f'Lokasi pelaksanaan acara = {booking_data[2]}',file=f)
-    print(f'Jumlah undangan = {data_klien[3]} orang',file=f)
-    print(f'Jenis undangan = {data_klien[4]}',file=f)
-    print(f'Formasi musik = {data_klien[5]}',file=f)
-    print(f'Tipe hidangan = {data_klien[6]}',file=f)
-    print(f'MC = {data_klien[7]}',file=f)
-    print(f'Tipe dokumentasi = {data_klien[8]}',file=f)
-    print('Estimasi Biaya Total:',file=f)
-    print("Rp{:,.2f}".format(biaya_total),file=f)
-    print('='*50, file=f)
-    print('\n',file=f)
