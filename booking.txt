@@ -41,3 +41,6 @@
 ['Minggu', '2023-11-26', 'Ramada Suites']
 
 ['Minggu', '2023-11-26', 'Pose In Hotel']
+['Rabu', '2023-09-13', 'The Royal Surakarta Heritage']
+['Senin', '2024-01-01', 'The Royal Surakarta Heritage']
+['Selasa', '2023-12-12', 'The Royal Surakarta Heritage']
