@@ -380,6 +380,7 @@ def catat_output():
         print(f'Tipe hidangan = {data_klien[6]}',file=f)
         print(f'MC = {data_klien[7]}',file=f)
         print(f'Tipe dokumentasi = {data_klien[8]}',file=f)
+        print(f'Pilihan percetakan = {data_klien[9]}', file=f)
         print('Estimasi Biaya Total:',file=f)
         print("Rp{:,.2f}".format(biaya_total),file=f)
         print('='*50, file=f)
