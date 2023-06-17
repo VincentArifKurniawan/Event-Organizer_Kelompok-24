@@ -1,6 +1,0 @@
-Name: vincent
-Phone: 123321
-
-Name: ago
-Phone: 123
-
