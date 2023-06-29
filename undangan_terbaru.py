@@ -10,6 +10,10 @@ undangan = {'Hard Cover':{
     'Digital':{
     'Undangan anda akan dicetak':'Digital',
     'Dengan harga': 100000},
+
+    'Tanpa Undangan':{
+    'Undangan anda akan dicetak':'Tanpa Undangan',
+    'Dengan harga': 0}
     
 }
 
@@ -17,7 +21,7 @@ cover_dipilih = []
 
 def cover():
     try:
-        x = input('Pilih jenis cetak isi undangan! (A/B/C) ')
+        x = input('Pilih jenis undangan! (A/B/C/D) ')
         if x.upper() == 'A':
             print('Undangan berjenis Hard Cover adalah undangan fisik yang\ndapat Anda berikan kepada setiap tamu yang diundang\ndengan bahan hard cover yang awet.\nBiaya percetakan akan dikalikan jumlah undangan.')
             print(undangan['Hard Cover'])
@@ -32,9 +36,14 @@ def cover():
                     print('Undangan berjenis Digital adalah undangan digital yang\nberupa link atau file gambar yang dapat Anda berikan\nkepada setiap tamu melalui media komunikasi elektronik.\nBiaya yang tercantum tidak dikenakan biaya percetakan.')
                     print(undangan['Digital'])
                     cover_dipilih.append('Digital')
-                else:
-                    print('Input tidak valid')
-                    cover()
+                if x.upper() != 'C':
+                    if x.upper() == 'D':
+                        print('Anda bisa memilih opsi ini apabila sudah mendapat jasa undangan dari luar atau memiliki desain tersendiri')
+                        print(undangan['Tanpa Undangan'])
+                        cover_dipilih.append('Tanpa Undangan')
+                    else:
+                        print('Input tidak valid')
+                        cover()
     except KeyboardInterrupt:
         print('\nMohon tidak menghentikan program secara paksa')
         cover()

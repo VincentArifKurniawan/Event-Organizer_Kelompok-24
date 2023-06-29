@@ -83,3 +83,165 @@ Rp95,695,000.00
 ==================================================
 
 
+==================================================
+Nama Klien = Vincent
+Nomor telepon klien = +6282133835575
+Acara yang diadakan = Gathering Tahun Baruan
+Waktu pelaksanaan acara = Minggu, 2023-12-31
+Lokasi pelaksanaan acara = Ramada Suites
+Jumlah undangan = 200 orang
+Jenis undangan = Digital
+Formasi musik = tanpa live musik
+Tipe hidangan = prasmanan
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Tanpa Percetakan
+Estimasi Biaya Total:
+Rp58,100,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Henry
+Nomor telepon klien = +6289202129
+Acara yang diadakan = Gathering Reuni SMP
+Waktu pelaksanaan acara = Selasa, 2028-08-08
+Lokasi pelaksanaan acara = Ramada Suites
+Jumlah undangan = 150 orang
+Jenis undangan = Digital
+Formasi musik = tanpa live musik
+Tipe hidangan = prasmanan
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Tanpa Percetakan
+Estimasi Biaya Total:
+Rp56,600,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Santiago Aghna
+Nomor telepon klien = +622186468
+Acara yang diadakan = Gathering Reuni SMP
+Waktu pelaksanaan acara = Minggu, 2023-12-31
+Lokasi pelaksanaan acara = Pose In Hotel
+Jumlah undangan = 100 orang
+Jenis undangan = Digital
+Formasi musik = exclusive band
+Tipe hidangan = catering
+MC = 2 orang
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Paket Kenangan Plus
+Estimasi Biaya Total:
+Rp28,800,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Vincent Arif Kurniawan
+Nomor telepon klien = +6282133835575
+Acara yang diadakan = Gathering reuni sma
+Waktu pelaksanaan acara = Minggu, 2023-11-26
+Lokasi pelaksanaan acara = Adhiwangsa Hotel & Convention
+Jumlah undangan = 500 orang
+Jenis undangan = Digital
+Formasi musik = exclusive band
+Tipe hidangan = prasmanan
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Tanpa Percetakan
+Estimasi Biaya Total:
+Rp75,600,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Vincent AK
+Nomor telepon klien = +62821353255
+Acara yang diadakan = Pesta ulang tahun Aghna ke-25
+Waktu pelaksanaan acara = Minggu, 2023-12-31
+Lokasi pelaksanaan acara = Graha Saba Buana
+Jumlah undangan = 900 orang
+Jenis undangan = Hard Cover
+Formasi musik = big band
+Tipe hidangan = catering
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Paket Kenangan Plus
+Estimasi Biaya Total:
+Rp178,850,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Vincent Arif
+Nomor telepon klien = +622846432
+Acara yang diadakan = Pesta ulang tahun pernikahan Haha dan Hihi yang ke-50
+Waktu pelaksanaan acara = Minggu, 2024-12-29
+Lokasi pelaksanaan acara = Pose In Hotel
+Jumlah undangan = 100 orang
+Jenis undangan = Digital
+Formasi musik = tanpa live musik
+Tipe hidangan = prasmanan
+MC = 1 orang
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Paket Kenangan
+Estimasi Biaya Total:
+Rp21,200,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Vincent Ak
+Nomor telepon klien = +62852645
+Acara yang diadakan = Pesta ulang tahun pernikahan Haha dan HIhi yang ke-50
+Waktu pelaksanaan acara = Minggu, 2023-12-31
+Lokasi pelaksanaan acara = The Royal Surakarta Heritage
+Jumlah undangan = 500 orang
+Jenis undangan = Digital
+Formasi musik = big band
+Tipe hidangan = catering
+MC = 2 orang
+Tipe dokumentasi = fotografi dan videografi
+Pilihan percetakan = Paket Komplit
+Estimasi Biaya Total:
+Rp89,695,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Vincent Arif Kurniawan
+Nomor telepon klien = +6282133835575
+Acara yang diadakan = Gathering Ulang Tahun Komunitas
+Waktu pelaksanaan acara = Jumat, 2023-12-29
+Lokasi pelaksanaan acara = Ramada Suites
+Jumlah undangan = 150 orang
+Jenis undangan = Tanpa Undangan
+Formasi musik = tanpa live musik
+Tipe hidangan = tanpa hidangan
+MC = tanpa MC
+Tipe dokumentasi = tanpa dokumentasi
+Pilihan percetakan = Tanpa Percetakan
+Estimasi Biaya Total:
+Rp50,000,000.00
+==================================================
+
+
+==================================================
+Nama Klien = Tester
+Nomor telepon klien = +62123456789
+Acara yang diadakan = Pesta ulang tahun Heni ke-55
+Waktu pelaksanaan acara = Selasa, 2023-12-12
+Lokasi pelaksanaan acara = Pose In Hotel
+Jumlah undangan = 100 orang
+Jenis undangan = Digital
+Formasi musik = band
+Tipe hidangan = prasmanan
+MC = tanpa MC
+Tipe dokumentasi = fotografi
+Pilihan percetakan = Paket Kenangan Plus
+Estimasi Biaya Total:
+Rp22,800,000.00
+==================================================
+
+

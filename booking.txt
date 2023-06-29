@@ -44,3 +44,16 @@
 ['Rabu', '2023-09-13', 'The Royal Surakarta Heritage']
 ['Senin', '2024-01-01', 'The Royal Surakarta Heritage']
 ['Selasa', '2023-12-12', 'The Royal Surakarta Heritage']
+['Minggu', '2023-12-31', 'Ramada Suites']
+['Selasa', '2028-08-08', 'Ramada Suites']
+['Minggu', '2023-12-31', 'Pose In Hotel']
+
+['Minggu', '2023-11-26', 'Adhiwangsa Hotel & Convention']
+
+['Minggu', '2023-12-31', 'Graha Saba Buana']
+
+['Minggu', '2024-12-29', 'Pose In Hotel']
+['Minggu', '2023-12-31', 'The Royal Surakarta Heritage']
+['Minggu', '2023-12-31', 'Adhiwangsa Hotel & Convention']
+['Jumat', '2023-12-29', 'Ramada Suites']
+['Selasa', '2023-12-12', 'Pose In Hotel']

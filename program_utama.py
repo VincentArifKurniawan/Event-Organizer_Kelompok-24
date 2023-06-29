@@ -194,7 +194,7 @@ def judulgathering():
     elif kondisi3 == True:
         judulfix.append(judul)
     else: 
-        print('Maaf, nama harus berupa karakter huruf. Coba lagi')
+        print('Maaf, input karakter tidak valid. Coba lagi')
         judulgathering()
     return judulfix[0]
 
@@ -240,20 +240,26 @@ print('='*50)
 print(f'Kapasitas maksimal gedung yang anda pilih adalah {maksimal}')
 diundang = 0
 while True:
-    undang = int(input('Berapa orang yang Anda undang? '))
-    if undang > maksimal:
-        print('Mohon maaf, kuota gedung tidak mencukupi.')
-    else:
-        print(f'Anda mengundang {undang} orang.')
-        diundang += undang
-        data_klien.append(diundang)
-        break
+    try:
+        undang = int(input('Berapa orang yang Anda undang? '))
+        if undang > maksimal:
+            print('Mohon maaf, kuota gedung tidak mencukupi.')
+        else:
+            print(f'Anda mengundang {undang} orang.')
+            diundang += undang
+            data_klien.append(diundang)
+            break
+    except ValueError:
+        print('Mohon memasukkan jumlah undangan dengan menggunakan angka.')
+    except KeyboardInterrupt:
+        print('\nMohon tidak menghentikan program secara paksa.')
 #jenis undangan
 import undangan_terbaru as undt
 print('='*50)
 print('A. Hard Cover')
 print('B. Soft Cover')
 print('C. Digital')
+print('D. Tanpa Undangan')
 def pilih_undangan():
     undt.cover()
     undt.verif()
@@ -279,6 +285,7 @@ import hidangan
 print('='*50)
 print('A. Prasmanan')
 print('B. Catering')
+print('C. Tanpa hidangan')
 def pesan_makan():
     hidangan.makanan()
     hidangan.verif()
@@ -296,7 +303,8 @@ pilih_mc()
 import Modul_Dok_Wawa as md
 print('='*50)
 print('A. Fotografi')
-print('B. Fotografi dan videografi')
+print('B. Fotografi dan Videografi')
+print('C. Tanpa Dokumentasi')
 def pilih_dokum():
     md.pilihanD()
     md.verif()
@@ -346,7 +354,7 @@ def preview():
     biaya_total += md.dokumentasi[data_klien[8]]["harga"]
     print(f'Percetakan = {data_klien[9]}, biaya = {"Rp{:,.2f}".format(cetak.paket_cetak[data_klien[9]]["harga"])}')
     biaya_total += cetak.paket_cetak[data_klien[9]]["harga"]
-    print('Estimasi Biaya Total (belum termasuk sewa kostum jika menghendaki:)')
+    print('Estimasi Biaya Total:')
     print("Rp{:,.2f}".format(biaya_total))
 preview()
 #contact person
@@ -418,8 +426,8 @@ def generate():
     x.close()
     print('Mohon perhatikan bahwa kesempatan Anda mengisi kode OTP hanya 3 kali.')
     while kesempatan != 0:
-        otp_input = int(input('Masukkan kode OTP = '))
-        if otp_input != kode_otp:
+        otp_input = input('Masukkan kode OTP = ')
+        if otp_input != tulis:
             print(f'Coba lagi. Kesempatan Anda {kesempatan - 1} kali.')
             kesempatan -= 1
         else:
